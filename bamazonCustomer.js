@@ -6,16 +6,16 @@ var connection = mysql.createConnection({
   host: "localhost",
   port: 3306,
   user: "root",
-  password: "",
+  password: "password",
   database: "Bamazon"
 })
 
 function start(){
 //Prints the items for sale and their details
 connection.query('SELECT * FROM Products', function(err, res){
-  if(err) throw err;
+  if(err) {throw err};
 
-  console.log('Welcome to BAMazon')
+  console.log('Welcome to Bamazon')
   console.log('----------------------------------------------------------------------------------------------------')
 
   for(var i = 0; i<res.length;i++){
